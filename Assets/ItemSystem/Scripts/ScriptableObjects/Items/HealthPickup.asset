@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 7653947398646454441, guid: e11906b698ae73c4d8e02340bcf2f686, type: 3}
   icon: {fileID: 0}
-  pickupType: 0
   itemName: 
   description: A health vial that will regenerate a small amount of HP.
   weight: 0
-  maxQuantity: 1
-  quantity: 1
+  maxStackableQuantity: 1
   useOnPickup: 1
   consumable: 1

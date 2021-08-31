@@ -17,7 +17,6 @@ MonoBehaviour:
   itemName: 
   description: 
   weight: 0
-  maxQuantity: 1
-  quantity: 1
-  useOnPickup: 1
-  consumable: 1
+  maxStackableQuantity: 3
+  useOnPickup: 0
+  consumable: 0

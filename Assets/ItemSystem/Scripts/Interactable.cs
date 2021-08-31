@@ -9,6 +9,8 @@ public class Interactable : MonoBehaviour
 	[SerializeField]
 	protected int quantity = 1;
 
+	protected Interactor interator;
+
 	GameObject itemGameObject;
 
 	private void Awake()
@@ -19,7 +21,12 @@ public class Interactable : MonoBehaviour
 	public virtual void Interact()
 	{
 		Debug.Log("Interacting with " + transform.name);
+	}
 
+	public virtual void Interact(Interactor interator)
+	{
+		Debug.Log("Interacting with " + transform.name + ". (Interactor passed.)");
+		this.interator = interator;
 	}
 
 	//public virtual void Drop(Vector3 dropPosition)

@@ -11,6 +11,13 @@ public class Collectable : Interactable
 		Pickup();
 	}
 
+	public override void Interact(Interactor interator)
+	{
+		base.Interact(interator);
+
+		Pickup();
+	}
+
 	void Pickup()
 	{
 		Debug.Log("Picked up " + transform.name);
@@ -19,8 +26,21 @@ public class Collectable : Interactable
 		{
 			Use();
 		}
+		else
+		{
+			Store();
+		}
 
-			
+
+	}
+
+	void Store()
+	{
+		if (interator != null)
+		{
+			interator.PutInStorage(itemObject, quantity);
+			Destroy(gameObject);
+		}
 	}
 
 	void Use()

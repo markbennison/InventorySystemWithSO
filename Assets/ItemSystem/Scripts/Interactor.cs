@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
-    Transform actor, actorCamera;
+    public Inventory attachedInventory;
+
+    Transform actorCamera;
     LayerMask layerMask;
 
     [SerializeField]
@@ -21,29 +23,34 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(KeyCode.F))
-		{
+        Interact();
+    }
+
+    public void Interact()
+	{
+        if (Input.GetKeyDown(KeyCode.F))
+        {
             actorCamera = Camera.main.transform;
             Debug.Log("Main Camera: " + actorCamera.name);
 
             Ray ray = new Ray(actorCamera.position, actorCamera.forward);
             RaycastHit raycastHit;
 
-            if(Physics.Raycast(ray, out raycastHit, maxDistanceFromCameraToObjects, layerMask))
-			{
+            if (Physics.Raycast(ray, out raycastHit, maxDistanceFromCameraToObjects, layerMask))
+            {
                 if (raycastHit.transform != null)
                 {
                     distanceToInteractable = Vector3.Distance(transform.position, raycastHit.transform.position);
                     if (distanceToInteractable <= interactableDistance)
-					{
+                    {
                         Debug.Log("In range: " + raycastHit.transform.name + " (" + distanceToInteractable.ToString("0.00") + " units)");
-                        Interactable interactor = raycastHit.transform.GetComponent<Interactable>();
-                        if (interactor != null)
-						{
-                            interactor.Interact();
+                        Interactable interactable = raycastHit.transform.GetComponent<Interactable>();
+                        if (interactable != null)
+                        {
+                            interactable.Interact(this);
                         }
                     }
-                    
+
                 }
                 //raycastHit
 
@@ -52,6 +59,13 @@ public class Interactor : MonoBehaviour
         }
     }
 
+    public void PutInStorage(ItemObject itemObject, int quantity)
+	{
+        if (attachedInventory != null)
+        {
+            attachedInventory.AddItem(itemObject, quantity);
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {
