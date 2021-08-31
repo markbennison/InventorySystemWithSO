@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b4afb6e0500fc40a61f8878f88c134, type: 3}
+  m_Name: HealthPickup
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 7653947398646454441, guid: e11906b698ae73c4d8e02340bcf2f686, type: 3}
+  icon: {fileID: 0}
+  pickupType: 0
+  itemName: 
+  description: A health vial that will regenerate a small amount of HP.
+  weight: 0
+  maxQuantity: 1
+  quantity: 1
+  useOnPickup: 1
+  consumable: 1
