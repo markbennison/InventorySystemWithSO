@@ -52,6 +52,9 @@ public class ItemSlot
 		{
 			remainingQuantity = 0;
 		}
+
+		stackQuantity -= remainingQuantity;
+
 		return remainingQuantity;
 	}
 }

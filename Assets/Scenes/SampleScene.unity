@@ -154,7 +154,7 @@ Transform:
   - {fileID: 1988280609}
   - {fileID: 1173988120}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &651883116
 GameObject:
@@ -344,7 +344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &828752441
 PrefabInstance:
@@ -903,6 +903,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model1P
       objectReference: {fileID: 0}
+    - target: {fileID: 3546346155733387024, guid: cbe43bd6c9df6b74ea4d4f704a9403bf, type: 3}
+      propertyPath: attachedInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a553990d06c1f74895515c6cfc932f6, type: 2}
     - target: {fileID: 4761329522446074965, guid: cbe43bd6c9df6b74ea4d4f704a9403bf, type: 3}
       propertyPath: m_TagString
       value: MainCamera
